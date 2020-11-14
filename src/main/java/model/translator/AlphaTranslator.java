@@ -1,5 +1,7 @@
 package model.translator;
 
+import java.util.Arrays;
+import java.util.List;
 import model.Dictionary;
 import model.Translator;
 
@@ -21,13 +23,11 @@ public class AlphaTranslator implements Translator
     {
         Dictionary dictionary = new Dictionary();
         String translated = new String();
+        List<String> characters = Arrays.asList(code.split("\\s+"));
         
-        String[] characters = code.split("\\s+");
-        
-        for (String symbol : characters) {
-            translated += dictionary.find(symbol).getAlpha();
-        }
-
-        return translated;
+        return characters
+            .stream()
+            .map(symbol -> dictionary.find(symbol).getAlpha())
+            .reduce(translated, String::concat);
     }
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import model.translator.TranslatorFactory;
 import view.ResultPresenter;
@@ -57,7 +58,7 @@ public class MainController
         if (args.length > 2) {
             ProgramArgumentsController controller = new ProgramArgumentsController(factory);
             
-            result = controller.handle(args);
+            result = controller.handle(Arrays.asList(args));
         } else {
             ConsoleController controller = new ConsoleController(factory, new Scanner(System.in));
             

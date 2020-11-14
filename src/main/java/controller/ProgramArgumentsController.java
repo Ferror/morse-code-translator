@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.List;
 import model.NotFoundException;
 import model.Translator;
 import model.translator.TranslatorFactory;
@@ -33,21 +34,21 @@ public class ProgramArgumentsController
      * Will translate the message for given program arguments or return error
      * presenter.
      * 
-     * @param args arguments the program is executed with.
+     * @param args list of arguments the program is executed with.
      * @return ResultPresenter that will present the translated message or an
      * error message.
      */
-    public ResultPresenter handle(String[] args)
+    public ResultPresenter handle(List args)
     {
         try {
-            Translator translator = this.factory.create(args[0]);
+            Translator translator = this.factory.create((String) args.get(0));
             String phrase = "";
 
-            for (int i = 1; i < args.length; i++) {
-                phrase += translator.translate(args[i]);
+            for (int i = 1; i < args.size(); i++) {
+                phrase += translator.translate((String) args.get(i));
             }
 
-            return new ResultPresenter(args[0], phrase);
+            return new ResultPresenter((String) args.get(0), phrase);
         } catch (NotFoundException e) {
             return new ResultPresenter(e.getMessage());
         }
