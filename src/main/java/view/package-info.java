@@ -1,5 +1,5 @@
 /**
- * Contains the classes that are responsible for displaying user friendly
- * results and messages.
+ * Contains the classes that are responsible for displaying program information
+ * in HTML.
  */
 package view;

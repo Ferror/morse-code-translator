@@ -1,4 +1,4 @@
 /**
- * Contains the Main Class and program controllers.
+ * Contains the Servlet classes that controls application behavior.
  */
 package controller;

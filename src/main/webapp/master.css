@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:#FAF3EC;
+    font-family: "Arial";
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    font-size: 16px;
+}
+
+input, select {
+    display: inline-block;
+    font-weight: bold;
+    width: 220px;
+    margin: 0 40px 20px 40px;
+    height: 40px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #F6F7F9;
+    color: #748194;
+}
+
+select {
+    font-weight: bold;
+    width: 220px;
+    margin: 0 40px 20px 40px;
+    height: 40px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #F6F7F9;
+    color: #748194;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    width: 200px;
+    margin: 0 35px 20px ;
+    height: 35px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #333333;
+    text-align: right;
+}
+
+input[type="submit"] {
+    height: 45px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #EE9BA3;
+    opacity: 0.8;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: #E35A67;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: #E35A67;
+    color: #FFFFFF;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+nav {
+    text-align: center;
+    margin: 30px 0 0 0;
+}

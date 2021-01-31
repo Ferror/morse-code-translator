@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Morse Translator</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="master.css" />
+    </head>
+    <body>
+        <h1>Translate your message!</h1>
+        
+        <form action="translate" method="GET">
+            <div>
+                <label>Message to translate</label>
+                <input type="text" name="message" placeholder="Type Message" />
+            </div>
+            
+            <div>
+                <label>Choose message translator</label>
+                <select name="translator">
+                    <option value="morse">Morse</option>
+                    <option value="alpha">Alpha</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Translate">
+        </form>
+        
+        <nav>
+            <a href="history">Translation History</a> |
+            <a href="history-database">Database Translation History</a>
+        </nav>
+    </body>
+</html>
