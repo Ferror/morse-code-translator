@@ -9,9 +9,9 @@ package model;
  */
 public interface Translator
 {
-
     /**
-     * Translates given string to other depending on instance
+     * Translates given string to other depending on instance.
+     * In case of invalid symbol it will present ? in it's place.
      * 
      * @param code to translate
      * @return translated code

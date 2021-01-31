@@ -1,21 +1,15 @@
 package controller;
 
-import java.util.Scanner;
-import model.translator.TranslatorFactory;
-import view.ResultPresenter;
-
 /**
- * The main program class. Contains MAIN method.
- * 
  * @author Zbigniew Malcherczyk (zbigmal353@student.polsl.pl)
- * @version 1.0
+ * @version 2.0
  */
 public class MainController
 {
     /**
-     * <h1>Console Controller Description</h1>
+     * <h1>Graphic Controller Description</h1>
      * 
-     * If you use console execution then you should pass more than two parameters:
+     * The program arguments if passed should be as presented below:
      * 
      * <ol>
      *     <li>The type of code you are passing</li>
@@ -47,23 +41,10 @@ public class MainController
      * international dictionary image.
      * 
      * When you will define less than two parameters (just like in example) you
-     * by default you will be able to pass this arguments via terminal.
+     * by default you will see GUI program where you will have to type arguments manually.
      */
     public static void main(String[] args)
     {
-        TranslatorFactory factory = new TranslatorFactory();
-        ResultPresenter result;
-                
-        if (args.length > 2) {
-            ProgramArgumentsController controller = new ProgramArgumentsController(factory);
-            
-            result = controller.handle(args);
-        } else {
-            ConsoleController controller = new ConsoleController(factory, new Scanner(System.in));
-            
-            result = controller.handle();
-        }
-        
-        result.present();
+        javax.swing.SwingUtilities.invokeLater(new Application(args));
     }
 }

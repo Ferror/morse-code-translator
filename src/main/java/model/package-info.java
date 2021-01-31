@@ -1,4 +1,4 @@
 /**
- * Contains the classes that store project logic 
+ * Contains the classes that store project logic.
  */
 package model;

@@ -1,13 +1,16 @@
 package model.translator;
 
+import java.util.Arrays;
+import java.util.List;
 import model.Dictionary;
 import model.Translator;
+import model.TranslatorFunction;
 
 /**
  * Latin alphabet translator.
  * 
  * @author Zbigniew Malcherczyk (zbigmal353@student.polsl.pl)
- * @version 1.0
+ * @version 1.2
  */
 public class AlphaTranslator implements Translator
 {
@@ -19,15 +22,15 @@ public class AlphaTranslator implements Translator
     @Override
     public String translate(String code)
     {
-        Dictionary dictionary = new Dictionary();
-        String translated = new String();
-        
-        String[] characters = code.split("\\s+");
-        
-        for (String symbol : characters) {
-            translated += dictionary.find(symbol).getAlpha();
+        if (code == null) {
+            return "";
         }
-
-        return translated;
+        
+        List<String> characters = Arrays.asList(code.split("\\s+"));
+        
+        return characters
+            .stream()
+            .map(new TranslatorFunction(new Dictionary()))
+            .reduce(new String(), String::concat);
     }
 }
